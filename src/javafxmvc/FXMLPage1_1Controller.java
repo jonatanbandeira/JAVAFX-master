@@ -202,6 +202,18 @@ public class FXMLPage1_1Controller implements Initializable {
         if (textFieldPetEmail.getText() == null || textFieldPetEmail.getText().length() == 0) {
             errorMessage += "Email inválido!\n";
         }
+        if (comboBoxPorte.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Porte inválido!\n";
+        }
+        if (comboBoxCidade.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Cidade inválida!\n";
+        }
+        if (comboBoxRaca.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Rça inválida!\n";
+        }
+        if (comboBoxSexo.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Sexo inválido!\n";
+        }
         
         if (errorMessage.length() == 0) {
             return true;

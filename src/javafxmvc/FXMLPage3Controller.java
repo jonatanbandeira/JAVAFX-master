@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -37,7 +39,8 @@ public class FXMLPage3Controller implements Initializable {
     private ComboBox comboBoxPorte;
     @FXML
     private ComboBox comboBoxCidade;
-
+    @FXML
+    private Button buttonBuscar;
     @FXML
     private List<Pet> listPets;
     @FXML
@@ -71,7 +74,7 @@ public class FXMLPage3Controller implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        PetDAO.setConnection(connection);
+        
         RacaDAO.setConnection(connection);    
         carregarComboBoxRaca();
         SexoDAO.setConnection(connection);    
@@ -81,7 +84,6 @@ public class FXMLPage3Controller implements Initializable {
         CidadeDAO.setConnection(connection);    
         carregarComboBoxCidade();
     }
-    
     
     private Stage dialogStage;
     private boolean buttonConfirmarClicked = false;
@@ -97,10 +99,6 @@ public class FXMLPage3Controller implements Initializable {
 
     public Pet getPet() {
         return this.pet;
-    }
-    
-    public boolean isButtonConfirmarClicked() {
-        return buttonConfirmarClicked;
     }
 
     public void carregarComboBoxRaca() {
@@ -131,11 +129,75 @@ public class FXMLPage3Controller implements Initializable {
         observableListCidades = FXCollections.observableArrayList(listCidades);
         comboBoxCidade.setItems(observableListCidades);
     }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+        this.comboBoxPorte.getSelectionModel().getSelectedItem();
+        this.comboBoxCidade.getSelectionModel().getSelectedItem();
+        this.comboBoxRaca.getSelectionModel().getSelectedItem();
+        this.comboBoxSexo.getSelectionModel().getSelectedItem();
+    }
+
+    public boolean isButtonConfirmarClicked() {
+        return buttonConfirmarClicked;
+    }
     
+    @FXML
+    public void handleButtonConfirmar() {
+        if (validarEntradaDeDados()) {
+            pet.setPorte((Porte) comboBoxPorte.getSelectionModel().getSelectedItem());
+            pet.setCidade((Cidade) comboBoxCidade.getSelectionModel().getSelectedItem());
+            pet.setRaca((Raca) comboBoxRaca.getSelectionModel().getSelectedItem());
+            pet.setSexo((Sexo) comboBoxSexo.getSelectionModel().getSelectedItem());
+
+            buttonConfirmarClicked = true;
+            dialogStage.close();
+        }
+    }
+    
+    @FXML
+    public void handleButtonCancelar() {
+        getDialogStage().close();
+    }
+    
+    
+    //Validar entrada de dados para o cadastro
+    private boolean validarEntradaDeDados() {
+        String errorMessage = "";
+
+        if (comboBoxPorte.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Porte inválido!\n";
+        }
+        if (comboBoxCidade.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Cidade inválida!\n";
+        }
+        if (comboBoxRaca.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Raça inválida!\n";
+        }
+        if (comboBoxSexo.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Sexo inválido!\n";
+        }
+        
+        if (errorMessage.length() == 0) {
+            return true;
+        } else {
+            // Mostrando a mensagem de erro
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Erro no cadastro");
+            alert.setHeaderText("Campos inválidos, por favor, corrija...");
+            alert.setContentText(errorMessage);
+            alert.show();
+            return false;
+        }
+
+    }
     @FXML
     public void handleButtonBuscar() throws IOException {
     Pet pet2 = new Pet();
     comboBoxRaca.getSelectionModel().getSelectedItem();
+    comboBoxSexo.getSelectionModel().getSelectedItem();
+    comboBoxCidade.getSelectionModel().getSelectedItem();
+    comboBoxPorte.getSelectionModel().getSelectedItem();
     
             boolean buttonConfirmarClicked = showFXMLPage3_1(pet2);
             if (buttonConfirmarClicked) {
@@ -171,5 +233,7 @@ public class FXMLPage3Controller implements Initializable {
         dialogStage.showAndWait();
 
         return controller.isButtonConfirmarClicked();
-    }
+    
+     }
 }
+     
