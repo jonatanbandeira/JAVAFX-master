@@ -12,15 +12,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-
 import javafx.scene.control.ComboBox;
-//import javafx.scene.control.Label;
-
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafxmvc.model.dao.CidadeDAO;
 import javafxmvc.model.dao.PetDAO;
-//import javafxmvc.model.dao.PetDAO;
 import javafxmvc.model.dao.PorteDAO;
 import javafxmvc.model.dao.RacaDAO;
 import javafxmvc.model.dao.SexoDAO;
@@ -31,8 +27,6 @@ import javafxmvc.model.domain.Pet;
 import javafxmvc.model.domain.Porte;
 import javafxmvc.model.domain.Raca;
 import javafxmvc.model.domain.Sexo;
-
-
 
 public class FXMLPage3Controller implements Initializable {
     @FXML

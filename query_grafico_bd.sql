@@ -1,7 +1,8 @@
-SELECT produtos.*, categorias.descricao FROM produtos, categorias
-WHERE produtos.cdcategoria = categorias.cdcategoria
-ORDER BY produtos.cdproduto
+-- QUERY PARA O GRÁFICO
 
-SELECT produtos.*, categorias.descricao FROM produtos
-JOIN categoias ON produtos.cdcategoria = categorias.cdcategoria
-ORDER BY produtos.cdproduto
+SELECT nomeRaca AS RAÇA,
+	      count(*) as QUANTIDADE
+FROM raca r,
+	   pets p 
+WHERE r.cdRaca = p.cdRaca
+group by nomeRaca;

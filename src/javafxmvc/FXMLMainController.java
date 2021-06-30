@@ -1,5 +1,6 @@
 package javafxmvc;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -15,11 +16,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
-/**
- * FXML Controller class
- *
- * @author user
- */
 public class FXMLMainController implements Initializable {
 
     @FXML
@@ -27,13 +23,9 @@ public class FXMLMainController implements Initializable {
     @FXML
     private AnchorPane ap;
 
-    /**
-     * Initializes the controller class.
-     * @param url
-     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
     }    
 
     @FXML
@@ -79,7 +71,7 @@ public class FXMLMainController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(FXMLMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
         bp.setCenter(root);
     }
     

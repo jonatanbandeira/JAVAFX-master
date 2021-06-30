@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javafxmvc;
+
 
 import java.net.URL;
 import java.util.List;
@@ -17,11 +13,6 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 import javafxmvc.model.domain.Pet;
 
-/**
- * FXML Controller class
- *
- * @author user
- */
 public class FXMLPage3_1Controller implements Initializable {
     
     @FXML
@@ -46,7 +37,7 @@ public class FXMLPage3_1Controller implements Initializable {
     @FXML
     private List<Pet> listPets;
 
-     private Stage dialogStage;
+    private Stage dialogStage;
     private boolean buttonConfirmarClicked = false;
     private Pet pet;
     
