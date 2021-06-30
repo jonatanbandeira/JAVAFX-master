@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
@@ -13,11 +14,10 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.FXMLPage1_1Controller">
    <children>
-      <GridPane layoutX="57.0" layoutY="49.0" prefHeight="302.0" prefWidth="484.0">
+      <GridPane layoutX="116.0" layoutY="49.0" prefHeight="302.0" prefWidth="368.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="229.0" minWidth="10.0" prefWidth="110.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.0" minWidth="10.0" prefWidth="162.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="277.0" minWidth="10.0" prefWidth="182.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -73,36 +73,31 @@
             <TextField fx:id="textFieldPetNomePet" GridPane.columnIndex="1" />
             <TextField fx:id="textFieldPetNomeDono" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="textFieldPetTelefone" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="textFieldPetEmail" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBox fx:id="comboBoxPorte" prefHeight="25.0" prefWidth="248.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBox fx:id="comboBoxSexo" prefHeight="25.0" prefWidth="249.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <ComboBox fx:id="comboBoxCidade" prefHeight="25.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <ComboBox fx:id="comboBoxRaca" prefHeight="25.0" prefWidth="262.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-            <Label fx:id="labelPetNomePet" prefHeight="17.0" prefWidth="221.0" GridPane.columnIndex="2" />
-            <Label fx:id="labelPetNomeDono" prefHeight="17.0" prefWidth="198.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="labelPetTelefone" prefHeight="17.0" prefWidth="223.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label fx:id="labelPetEmail" prefHeight="17.0" prefWidth="197.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label fx:id="labelPetPorte" prefHeight="17.0" prefWidth="212.0" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Label fx:id="labelPetSexo" prefHeight="17.0" prefWidth="198.0" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Label fx:id="labelPetCidade" prefHeight="17.0" prefWidth="211.0" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <Label fx:id="labelPetRaca" prefHeight="17.0" prefWidth="212.0" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="textFieldPetEmail" prefHeight="25.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="comboBoxPorte" prefHeight="25.0" prefWidth="278.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBox fx:id="comboBoxSexo" prefHeight="25.0" prefWidth="277.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBox fx:id="comboBoxCidade" prefHeight="25.0" prefWidth="279.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ComboBox fx:id="comboBoxRaca" prefHeight="25.0" prefWidth="287.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
          </children>
       </GridPane>
-      <Button fx:id="buttonConfirmar" layoutX="167.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" style="-fx-background-color: #00afbb;" text="Cadastrar" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Text fill="#00afbb" layoutX="148.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DO PET">
+      <Group layoutX="186.0" layoutY="356.0">
+         <children>
+            <Button fx:id="buttonConfirmar" mnemonicParsing="false" onAction="#handleButtonConfirmar" style="-fx-background-color: #00afbb;" text="Cadastrar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonCancelar" layoutX="114.0" mnemonicParsing="false" onAction="#handleButtonCancelar" prefHeight="30.0" prefWidth="87.0" style="-fx-background-color: #00afbb;" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Group>
+      <Text fill="#00afbb" layoutX="239.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CADASTRO DO PET">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Text>
-      <Button fx:id="buttonCancelar" layoutX="274.0" layoutY="356.0" mnemonicParsing="false" onAction="#handleButtonCancelar" style="-fx-background-color: #00afbb;" text="Cancelar" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Button>
-      <Label layoutX="10.0" layoutY="10.0" prefHeight="17.0" prefWidth="221.0" />
    </children>
 </AnchorPane>

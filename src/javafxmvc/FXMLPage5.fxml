@@ -10,9 +10,9 @@
    <children>
       <TableView layoutX="184.0" layoutY="90.0" prefHeight="339.0" prefWidth="600.0" AnchorPane.bottomAnchor="61.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn prefWidth="232.0" text="Cidades" />
-          <TableColumn minWidth="6.0" prefWidth="98.0" text="Qtd. pets" />
-            <TableColumn minWidth="0.0" prefWidth="102.0" text="Qtd. fêmeas" />
+          <TableColumn prefWidth="155.0" text="Cidades" />
+          <TableColumn minWidth="6.0" prefWidth="137.0" text="Qtd. pets" />
+            <TableColumn minWidth="0.0" prefWidth="140.0" text="Qtd. fêmeas" />
             <TableColumn minWidth="0.0" prefWidth="107.0" text="Qtd. machos" />
         </columns>
       </TableView>
