@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.FXMLPage1Controller">
+   <children>
+      <SplitPane dividerPositions="0.33773584905660375" layoutX="68.0" layoutY="-1.0" prefHeight="347.0" prefWidth="532.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="229.0">
+               <children>
+                  <TableView fx:id="tableViewPets" layoutY="73.0" prefHeight="345.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columns>
+                      <TableColumn fx:id="tableColumnPetNomePet" prefWidth="94.0" text="Pet" />
+                      <TableColumn fx:id="tableColumnPetNomeDono" prefWidth="82.0" text="Dono" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="279.0">
+               <children>
+                  <GridPane layoutX="32.0" layoutY="71.0" prefHeight="244.0" prefWidth="257.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.0" minWidth="10.0" prefWidth="63.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="149.0" minWidth="22.0" prefWidth="137.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Telefone">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Email" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Raça" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Sexo" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Porte " GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="Cidade" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="labelPetTelefone" GridPane.columnIndex="1" />
+                        <Label fx:id="labelPetEmail" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="labelPetRaca" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="labelPetSexo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="labelPetPorte" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="labelPetCidade" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+                  <Text fill="#00afbb" layoutX="71.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETALHES DO PET">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Text>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+      <Group layoutX="193.0" layoutY="357.0">
+         <children>
+            <Button fx:id="buttonAlterar" layoutX="103.0" mnemonicParsing="false" onAction="#handleButtonAlterar" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #00afbb;" text="Alterar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonInserir" mnemonicParsing="false" onAction="#handleButtonInserir" style="-fx-background-color: #00afbb;" text="Cadastrar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonRemover" layoutX="200.0" mnemonicParsing="false" onAction="#handleButtonRemover" style="-fx-background-color: #00afbb;" text="Remover" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Group>
+   </children>
+</AnchorPane>
