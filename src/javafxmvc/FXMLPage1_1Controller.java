@@ -38,13 +38,13 @@ public class FXMLPage1_1Controller implements Initializable {
     @FXML
     private TextField textFieldPetEmail;
     @FXML
-    private ComboBox comboBoxRaca;
+    private ComboBox<Raca> comboBoxRaca;
     @FXML
-    private ComboBox comboBoxSexo;
+    private ComboBox<Sexo> comboBoxSexo;
     @FXML
-    private ComboBox comboBoxPorte;
+    private ComboBox<Porte> comboBoxPorte;
     @FXML
-    private ComboBox comboBoxCidade;
+    private ComboBox<Cidade> comboBoxCidade;
     @FXML
     private Button buttonConfirmar;
     @FXML
@@ -149,6 +149,12 @@ public class FXMLPage1_1Controller implements Initializable {
         this.textFieldPetNomeDono.setText(pet.getNomeDono());
         this.textFieldPetTelefone.setText(pet.getTelefone());
         this.textFieldPetEmail.setText(pet.getEmail());
+        this.comboBoxPorte.getSelectionModel().getSelectedItem();
+        this.comboBoxCidade.getSelectionModel().getSelectedItem();
+        this.comboBoxRaca.getSelectionModel().getSelectedItem();
+        this.comboBoxSexo.getSelectionModel().getSelectedItem();
+        
+        
     }
 
     public boolean isButtonConfirmarClicked() {
@@ -162,10 +168,10 @@ public class FXMLPage1_1Controller implements Initializable {
             pet.setNomeDono(textFieldPetNomeDono.getText());
             pet.setTelefone(textFieldPetTelefone.getText());
             pet.setEmail(textFieldPetEmail.getText());
-            
-            
-            
-           
+            pet.setPorte(comboBoxPorte.getSelectionModel().getSelectedItem());
+            pet.setCidade(comboBoxCidade.getSelectionModel().getSelectedItem());
+            pet.setRaca(comboBoxRaca.getSelectionModel().getSelectedItem());
+            pet.setSexo(comboBoxSexo.getSelectionModel().getSelectedItem());
 
             buttonConfirmarClicked = true;
             dialogStage.close();
@@ -193,6 +199,18 @@ public class FXMLPage1_1Controller implements Initializable {
         }
         if (textFieldPetEmail.getText() == null || textFieldPetEmail.getText().length() == 0) {
             errorMessage += "Email inválido!\n";
+        }
+        if (comboBoxPorte.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Porte inválido!\n";
+        }
+        if (comboBoxCidade.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Cidade inválida!\n";
+        }
+        if (comboBoxRaca.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Rça inválida!\n";
+        }
+        if (comboBoxSexo.getSelectionModel().getSelectedItem() == null) {
+            errorMessage += "Sexo inválido!\n";
         }
         
         if (errorMessage.length() == 0) {

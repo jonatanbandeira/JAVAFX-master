@@ -75,29 +75,9 @@ public class FXMLPage1Controller implements Initializable {
         return buttonConfirmarClicked;
     }
     
-    /*
-    @FXML
-    private List<Sexo> listSexos;
-    @FXML
-    private List<Porte> listPortes;
-    @FXML
-    private List<Raca> listRacas;
-    @FXML
-    private List<Cidade> listCidades;
-    */
+
     @FXML
     private ObservableList<Pet> observableListPets;
-    
-    /*
-    @FXML
-    private ObservableList<Sexo> observableListSexos;
-    @FXML
-    private ObservableList<Porte> observableListPortes;
-    @FXML
-    private ObservableList<Raca> observableListRacas;
-    @FXML
-    private ObservableList<Cidade> observableListCidades;
-    */
     
      //Atributos para manipulação de Banco de Dados
     private final Database database = DatabaseFactory.getDatabase("postgresql");
