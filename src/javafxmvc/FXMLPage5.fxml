@@ -10,16 +10,16 @@
    <children>
       <TableView fx:id="tableViewPet" layoutX="184.0" layoutY="90.0" prefHeight="350.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn fx:id="tableColumnPetCidades" prefWidth="170.0" text="Cidades" />
-          <TableColumn fx:id="tableColumnPetQtdPets" minWidth="6.0" prefWidth="160.0" text="Qtd. pets" />
-            <TableColumn fx:id="tableColumnPetQtdFemea" minWidth="0.0" prefWidth="129.0" text="Qtd. fêmeas" />
-            <TableColumn fx:id="tableColumnPetQtdMachos" minWidth="0.0" prefWidth="140.0" text="Qtd. machos" />
+          <TableColumn fx:id="tableColumnPetCidades" prefWidth="199.0" text="Cidades" />
+          <TableColumn fx:id="tableColumnPetQtdPets" minWidth="6.0" prefWidth="203.0" text="Quantidade Pets" />
+            <TableColumn fx:id="tableColumnPetSexo" minWidth="0.0" prefWidth="197.0" text="Sexo" />
         </columns>
       </TableView>
-      <Button fx:id="buttonImprimir" layoutX="232.0" layoutY="356.0" mnemonicParsing="false" style="-fx-background-color: #00afbb;" text="Imprimir relatório" textFill="WHITE">
+      <Button fx:id="buttonImprimir" layoutX="232.0" layoutY="356.0" mnemonicParsing="false" onAction="#buttonImprimir" style="-fx-background-color: #00afbb;" text="Imprimir relatório" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
+      <Button fx:id="buttonCarregar" layoutX="463.0" layoutY="359.0" mnemonicParsing="false" onAction="#carregarTableViewPets" text="Carregar" />
    </children>
 </AnchorPane>

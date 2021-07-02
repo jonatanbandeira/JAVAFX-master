@@ -62,6 +62,7 @@ public class FXMLMainController implements Initializable {
     private void page6(MouseEvent event) {
         loadPage("FXMLPage6.fxml");
     }
+    
     @FXML
     private void loadPage(String page){
         Parent root = null;

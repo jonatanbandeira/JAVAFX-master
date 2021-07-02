@@ -171,4 +171,32 @@ public class PetDAO {
         }
         return retorno;
     }
+    
+   /* public Map<String, Integer> listarQuantidadeRacaCadastradas() {
+        String sql = "select nomeRaca as RACA, count(*) as QUANTIDADE from raca r, pets p where r.cdRaca = p.cdRaca group by nmeRaca";
+        Map<String, Integer> retorno = new HashMap();
+        
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            ResultSet resultado = stmt.executeQuery();
+
+            while (resultado.next()) {
+                ArrayList linha = new ArrayList();
+                if (!retorno.containsKey(resultado.getInt("ano")))
+                {
+                    linha.add(resultado.getString("RACA"));
+                    linha.add(resultado.getInt("QUANTIDADE"));
+                    retorno.put(resultado.getString("nomeRaca"), linha);
+                }else{
+                    ArrayList linhaNova = retorno.get(resultado.getString("nomeRaca"));
+                    linhaNova.add(resultado.getString("RACA"));
+                    linhaNova.add(resultado.getInt("QUANTIDADE"));
+                }
+            }
+            return retorno;
+        } catch (SQLException ex) {
+            Logger.getLogger(PetDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return retorno;
+    }*/
 }

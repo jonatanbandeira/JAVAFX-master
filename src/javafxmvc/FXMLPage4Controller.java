@@ -1,31 +1,55 @@
-package javafxmvc;
+/*package javafxmvc;
 
-
-import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.util.Map;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.event.ActionEvent;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafxmvc.model.dao.PetDAO;
+import javafxmvc.model.database.Database;
+import javafxmvc.model.database.DatabaseFactory;
+*/
 
-public class FXMLPage4Controller implements Initializable {
+//public class FXMLPage4Controller implements Initializable {
 
-   
+/*    @FXML
+    private BarChart<String, Integer> barChart;
 
+    @FXML
+    private CategoryAxis categoryAxis;
+
+    @FXML
+    private NumberAxis numberAxis;
     
+    private final ObservableList<String> observableListMeses = FXCollections.observableArrayList();
+
+    //Atributos para manipulaÃ§Ã£o de Banco de Dados
+    private final Database database = DatabaseFactory.getDatabase("postgresql");
+    private final Connection connection = database.conectar();
+    private final PetDAO vendaDAO = new VendaDAO();
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        
+        Map<String, Integer> dados = PetDAO.listarQuantidadeRacaCadastradas();
+        XYChart.Series<String, Integer> series = new XYChart.Series<>();
 
-   
-    
-}
+        for (Map.Entry<String, Integer> dadosItem : dados.entrySet()) {
+
+                String raca = dadosItem.getKey().toString();
+                Integer quantidade;
+
+                quantidade = (Integer) dadosItem.getValue();
+
+                series.getData().add(new XYChart.Data<>(raca, quantidade));
+        }
+        barChart.getData().add(series);
+    }*/
+//}
