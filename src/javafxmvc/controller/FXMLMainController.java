@@ -1,4 +1,4 @@
-package javafxmvc;
+package javafxmvc.controller;
 
 
 import java.io.IOException;
@@ -35,33 +35,29 @@ public class FXMLMainController implements Initializable {
 
     @FXML
     private void page1(MouseEvent event) {
-        loadPage("FXMLPage1.fxml");
+        loadPage("/javafxmvc/view/FXMLCadastro.fxml");
     }
 
     @FXML
-    private void page2(MouseEvent event) {
-        loadPage("FXMLPage2.fxml");
-    }
-
-@FXML
     private void page3(MouseEvent event) {
-        loadPage("FXMLPage3.fxml");
+        loadPage("/javafxmvc/view/FXMLMatchPet.fxml");
     }
 
     @FXML
     private void page4(MouseEvent event) {
-        loadPage("FXMLPage4.fxml");
+        loadPage("/javafxmvc/view/FXMLGrafico.fxml");
     }
 
     @FXML
     private void page5(MouseEvent event) {
-        loadPage("FXMLPage5.fxml");
+        loadPage("/javafxmvc/view/FXMLRelatorio.fxml");
     }
 
     @FXML
     private void page6(MouseEvent event) {
-        loadPage("FXMLPage6.fxml");
+        loadPage("/javafxmvc/view/FXMLSobre.fxml");
     }
+    
     
     @FXML
     private void loadPage(String page){

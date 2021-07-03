@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.FXMLPage4Controller">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLGraficoController">
    <children>
       <Label layoutX="110.0" layoutY="23.0" prefHeight="26.0" prefWidth="385.0" text=" GRÁFICO DOS TIPOS DE RAÇAS CADASTRADAS" textAlignment="CENTER" textFill="#00afbb">
          <font>

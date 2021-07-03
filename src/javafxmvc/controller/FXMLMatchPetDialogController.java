@@ -1,4 +1,4 @@
-package javafxmvc;
+package javafxmvc.controller;
 
 
 import java.net.URL;
@@ -19,7 +19,7 @@ import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
 import javafxmvc.model.domain.Pet;
 
-public class FXMLPage3_1Controller implements Initializable {
+public class FXMLMatchPetDialogController implements Initializable {
     
     @FXML
     private TableView<Pet> tableViewPets;

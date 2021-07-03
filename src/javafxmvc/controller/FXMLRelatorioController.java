@@ -1,4 +1,4 @@
-package javafxmvc;
+package javafxmvc.controller;
 
 
 import java.net.URL;
@@ -28,7 +28,7 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
-public class FXMLPage5Controller implements Initializable {
+public class FXMLRelatorioController implements Initializable {
     
        @FXML
        private TableView<Pet> tableViewPet;

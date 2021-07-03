@@ -17,7 +17,7 @@ import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
 */
 
-//public class FXMLPage4Controller implements Initializable {
+//public class FXMLGraficoController implements Initializable {
 
 /*    @FXML
     private BarChart<String, Integer> barChart;
@@ -53,7 +53,7 @@ import javafxmvc.model.database.DatabaseFactory;
         barChart.getData().add(series);
     }*/
 //}
-package javafxmvc;
+package javafxmvc.controller;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -73,7 +73,7 @@ import javafxmvc.model.dao.PetDAO;
 import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
 
-public class FXMLPage4Controller implements Initializable {
+public class FXMLGraficoController implements Initializable {
 
     @FXML
     private BarChart<String, Integer> barChart;

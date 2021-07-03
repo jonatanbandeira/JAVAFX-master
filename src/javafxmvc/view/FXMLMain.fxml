@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.FXMLMainController">
+<BorderPane fx:id="bp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLMainController">
    <left>
       <VBox prefHeight="400.0" prefWidth="126.0" style="-fx-background-color: #00afbb;" BorderPane.alignment="CENTER">
          <children>
@@ -46,11 +46,11 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane fx:id="ap" prefHeight="400.0" prefWidth="438.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="ap" prefHeight="400.0" prefWidth="500.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="215.0" fitWidth="310.0" layoutX="94.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="235.0" fitWidth="309.0" layoutX="83.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@imagens/tinpet.png" />
+                  <Image url="@../imagens/tinpet.png" />
                </image>
             </ImageView>
          </children>

@@ -1,6 +1,7 @@
-package javafxmvc;
+package javafxmvc.controller;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.util.List;
@@ -8,14 +9,16 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafxmvc.model.dao.CidadeDAO;
+import javafxmvc.model.dao.PetDAO;
 import javafxmvc.model.dao.PorteDAO;
 import javafxmvc.model.dao.RacaDAO;
 import javafxmvc.model.dao.SexoDAO;
@@ -27,38 +30,37 @@ import javafxmvc.model.domain.Porte;
 import javafxmvc.model.domain.Raca;
 import javafxmvc.model.domain.Sexo;
 
-public class FXMLPage1_1Controller implements Initializable {
-
+public class FXMLMatchPetController implements Initializable {
     @FXML
-    private TextField textFieldPetNomePet;
+    private ComboBox comboBoxRaca;
     @FXML
-    private TextField textFieldPetNomeDono;
+    private ComboBox comboBoxSexo;
     @FXML
-    private TextField textFieldPetTelefone;
+    private ComboBox comboBoxPorte;
     @FXML
-    private TextField textFieldPetEmail;
+    private ComboBox comboBoxCidade;
     @FXML
-    private ComboBox<Raca> comboBoxRaca;
+    private Button buttonBuscar;
     @FXML
-    private ComboBox<Sexo> comboBoxSexo;
+    private List<Pet> listPets;
     @FXML
-    private ComboBox<Porte> comboBoxPorte;
-    @FXML
-    private ComboBox<Cidade> comboBoxCidade;
-    @FXML
-    private Button buttonConfirmar;
-    @FXML
-    private Button buttonCancelar;
-    
-    
     private List<Sexo> listSexos;
+    @FXML
     private List<Porte> listPortes;
+    @FXML
     private List<Raca> listRacas;
+    @FXML
     private List<Cidade> listCidades;
     
+    @FXML
+    private ObservableList<Pet> observableListPets;
+    @FXML
     private ObservableList<Sexo> observableListSexos;
+    @FXML
     private ObservableList<Porte> observableListPortes;
+    @FXML
     private ObservableList<Raca> observableListRacas;
+    @FXML
     private ObservableList<Cidade> observableListCidades;
     
     //Atributos para manipulação de Banco de Dados
@@ -68,22 +70,7 @@ public class FXMLPage1_1Controller implements Initializable {
     private final SexoDAO SexoDAO = new SexoDAO();
     private final PorteDAO PorteDAO = new PorteDAO();
     private final CidadeDAO CidadeDAO = new CidadeDAO();
-    @FXML
-    private Label labelPetNomePet;
-    @FXML
-    private Label labelPetNomeDono;
-    @FXML
-    private Label labelPetTelefone;
-    @FXML
-    private Label labelPetEmail;
-    @FXML
-    private Label labelPetPorte;
-    @FXML
-    private Label labelPetSexo;
-    @FXML
-    private Label labelPetCidade;
-    @FXML
-    private Label labelPetRaca;
+    private final PetDAO PetDAO = new PetDAO();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -145,16 +132,10 @@ public class FXMLPage1_1Controller implements Initializable {
 
     public void setPet(Pet pet) {
         this.pet = pet;
-        this.textFieldPetNomePet.setText(pet.getNomePet());
-        this.textFieldPetNomeDono.setText(pet.getNomeDono());
-        this.textFieldPetTelefone.setText(pet.getTelefone());
-        this.textFieldPetEmail.setText(pet.getEmail());
         this.comboBoxPorte.getSelectionModel().getSelectedItem();
         this.comboBoxCidade.getSelectionModel().getSelectedItem();
         this.comboBoxRaca.getSelectionModel().getSelectedItem();
         this.comboBoxSexo.getSelectionModel().getSelectedItem();
-        
-        
     }
 
     public boolean isButtonConfirmarClicked() {
@@ -164,14 +145,10 @@ public class FXMLPage1_1Controller implements Initializable {
     @FXML
     public void handleButtonConfirmar() {
         if (validarEntradaDeDados()) {
-            pet.setNomePet(textFieldPetNomePet.getText());
-            pet.setNomeDono(textFieldPetNomeDono.getText());
-            pet.setTelefone(textFieldPetTelefone.getText());
-            pet.setEmail(textFieldPetEmail.getText());
-            pet.setPorte(comboBoxPorte.getSelectionModel().getSelectedItem());
-            pet.setCidade(comboBoxCidade.getSelectionModel().getSelectedItem());
-            pet.setRaca(comboBoxRaca.getSelectionModel().getSelectedItem());
-            pet.setSexo(comboBoxSexo.getSelectionModel().getSelectedItem());
+            pet.setPorte((Porte) comboBoxPorte.getSelectionModel().getSelectedItem());
+            pet.setCidade((Cidade) comboBoxCidade.getSelectionModel().getSelectedItem());
+            pet.setRaca((Raca) comboBoxRaca.getSelectionModel().getSelectedItem());
+            pet.setSexo((Sexo) comboBoxSexo.getSelectionModel().getSelectedItem());
 
             buttonConfirmarClicked = true;
             dialogStage.close();
@@ -188,18 +165,6 @@ public class FXMLPage1_1Controller implements Initializable {
     private boolean validarEntradaDeDados() {
         String errorMessage = "";
 
-        if (textFieldPetNomePet.getText() == null || textFieldPetNomePet.getText().length() == 0) {
-            errorMessage += "Nome Pet inválido!\n";
-        }
-        if (textFieldPetNomeDono.getText() == null || textFieldPetNomeDono.getText().length() == 0) {
-            errorMessage += "Nome Dono inválido!\n";
-        }
-        if (textFieldPetTelefone.getText() == null || textFieldPetTelefone.getText().length() == 0) {
-            errorMessage += "Telefone inválido!\n";
-        }
-        if (textFieldPetEmail.getText() == null || textFieldPetEmail.getText().length() == 0) {
-            errorMessage += "Email inválido!\n";
-        }
         if (comboBoxPorte.getSelectionModel().getSelectedItem() == null) {
             errorMessage += "Porte inválido!\n";
         }
@@ -207,7 +172,7 @@ public class FXMLPage1_1Controller implements Initializable {
             errorMessage += "Cidade inválida!\n";
         }
         if (comboBoxRaca.getSelectionModel().getSelectedItem() == null) {
-            errorMessage += "Rça inválida!\n";
+            errorMessage += "Raça inválida!\n";
         }
         if (comboBoxSexo.getSelectionModel().getSelectedItem() == null) {
             errorMessage += "Sexo inválido!\n";
@@ -224,27 +189,51 @@ public class FXMLPage1_1Controller implements Initializable {
             alert.show();
             return false;
         }
+
     }
+    @FXML
+    public void handleButtonBuscar() throws IOException {
+    Pet pet2 = new Pet();
+    comboBoxRaca.getSelectionModel().getSelectedItem();
+    comboBoxSexo.getSelectionModel().getSelectedItem();
+    comboBoxCidade.getSelectionModel().getSelectedItem();
+    comboBoxPorte.getSelectionModel().getSelectedItem();
+    
+            boolean buttonConfirmarClicked = showFXMLMatchPetDialog(pet2);
+            if (buttonConfirmarClicked) {
+                PetDAO.buscar(pet2);
+                carregarComboBoxRaca();
+            }
+        }
+    
+    
+     public boolean showFXMLMatchPetDialog(Pet pet) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(FXMLMatchPetDialogController.class.getResource("/javafxmvc/view/FXMLMatchPetDialog.fxml"));
+        AnchorPane page = (AnchorPane) loader.load();
+
+        // Criando um Estágio de Diálogo (Stage Dialog)
+        Stage dialogStage = new Stage();
+        //Especifica a modalidade para esta fase . Isso deve ser feito antes de fazer o estágio visível. A modalidade pode ser: Modality.NONE , Modality.WINDOW_MODAL , ou Modality.APPLICATION_MODAL 
+        //dialogStage.initModality(Modality.WINDOW_MODAL);//WINDOW_MODAL (possibilita minimizar)
+        
+        //Especifica a janela do proprietário para esta página, ou null para um nível superior.
+        //dialogStage.initOwner(null); //null deixa a Tela Principal livre para ser movida
+        //dialogStage.initOwner(this.tableViewClientes.getScene().getWindow()); //deixa a tela de Preenchimento dos dados como prioritária
+        
+        Scene scene = new Scene(page);
+        dialogStage.setScene(scene);
+
+        // Setando o cliente no Controller.
+        FXMLMatchPetDialogController controller = loader.getController();
+        controller.setDialogStage(dialogStage);
+        
+
+        // Mostra o Dialog e espera até que o usuário o feche
+        dialogStage.showAndWait();
+
+        return controller.isButtonConfirmarClicked();
+    
+     }
 }
-
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-        
-         
-        
-        
-        
-        
-        
      
-    
-    
-

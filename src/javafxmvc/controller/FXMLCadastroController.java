@@ -1,4 +1,4 @@
-package javafxmvc;
+package javafxmvc.controller;
 
 
 import java.io.IOException;
@@ -25,7 +25,7 @@ import javafxmvc.model.database.Database;
 import javafxmvc.model.database.DatabaseFactory;
 import javafxmvc.model.domain.Pet;
 
-public class FXMLPage1Controller implements Initializable {
+public class FXMLCadastroController implements Initializable {
 
     @FXML
     private TableView<Pet> tableViewPets;
@@ -129,7 +129,7 @@ public class FXMLPage1Controller implements Initializable {
     @FXML
     public void handleButtonInserir() throws IOException {
     Pet pet2 = new Pet();
-    boolean buttonConfirmarClicked = showFXMLPage1_1(pet2);
+    boolean buttonConfirmarClicked = showFXMLCadastro(pet2);
         if (buttonConfirmarClicked) {
             PetDAO.inserir(pet2);
             carregarTableViewPets();
@@ -140,7 +140,7 @@ public class FXMLPage1Controller implements Initializable {
     public void handleButtonAlterar() throws IOException {
     Pet pet2 = tableViewPets.getSelectionModel().getSelectedItem();//Obtendo cliente selecionado
     if (pet2 != null) {
-            boolean buttonConfirmarClicked = showFXMLPage1_1(pet2);
+            boolean buttonConfirmarClicked = showFXMLCadastro(pet2);
             if (buttonConfirmarClicked) {
                 PetDAO.alterar(pet2);
                 carregarTableViewPets();
@@ -165,9 +165,9 @@ public class FXMLPage1Controller implements Initializable {
         }
     }
 
-      public boolean showFXMLPage1_1(Pet pet) throws IOException {
+      public boolean showFXMLCadastro(Pet pet) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(FXMLPage1_1Controller.class.getResource("FXMLPage1_1.fxml"));
+        loader.setLocation(FXMLCadastroDialogController.class.getResource("/javafxmvc/view/FXMLCadastroDialog.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
 
         // Criando um Estágio de Diálogo (Stage Dialog)
@@ -183,7 +183,7 @@ public class FXMLPage1Controller implements Initializable {
         dialogStage.setScene(scene);
 
         // Setando o cliente no Controller.
-        FXMLPage1_1Controller controller = loader.getController();
+        FXMLCadastroDialogController controller = loader.getController();
         controller.setDialogStage(dialogStage);
         controller.setPet(pet);
 
