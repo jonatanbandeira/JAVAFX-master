@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.FXMLPage4Controller">
    <children>
-      <PieChart layoutY="51.0" prefHeight="349.0" prefWidth="600.0" />
-      <Label layoutX="67.0" layoutY="14.0" text=" GRÁFICO DE PIZZA COM OS TIPOS DE RAÇAS CADASTRADAS" textAlignment="CENTER" textFill="#00afbb">
+      <Label layoutX="110.0" layoutY="23.0" prefHeight="26.0" prefWidth="385.0" text=" GRÁFICO DOS TIPOS DE RAÇAS CADASTRADAS" textAlignment="CENTER" textFill="#00afbb">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
+      <BarChart fx:id="barChart" layoutX="60.0" layoutY="50.0" prefHeight="350.0" prefWidth="480.0">
+        <xAxis>
+          <CategoryAxis fx:id="categoryAxis" side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="numberAxis" side="LEFT" />
+        </yAxis>
+      </BarChart>
    </children>
 </AnchorPane>

@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafxmvc.model.domain.Cidade;
@@ -172,8 +174,8 @@ public class PetDAO {
         return retorno;
     }
     
-   /* public Map<String, Integer> listarQuantidadeRacaCadastradas() {
-        String sql = "select nomeRaca as RACA, count(*) as QUANTIDADE from raca r, pets p where r.cdRaca = p.cdRaca group by nmeRaca";
+   public Map<String, Integer> listarQuantidadeRacaCadastradas() {
+        String sql = "select nomeRaca as RACA, count(*) as QUANTIDADE from raca r, pets p where r.cdRaca = p.cdRaca group by RACA";
         Map<String, Integer> retorno = new HashMap();
         
         try {
@@ -182,21 +184,22 @@ public class PetDAO {
 
             while (resultado.next()) {
                 ArrayList linha = new ArrayList();
-                if (!retorno.containsKey(resultado.getInt("ano")))
+                if (!retorno.containsKey(resultado.getInt("QUANTIDADE")))
                 {
-                    linha.add(resultado.getString("RACA"));
-                    linha.add(resultado.getInt("QUANTIDADE"));
-                    retorno.put(resultado.getString("nomeRaca"), linha);
+                    //linha.add(resultado.getString("RACA"));;
+                    //linha.add(resultado.getInt("QUANTIDADE"));
+                    retorno.put(resultado.getString("RACA"), resultado.getInt("QUANTIDADE"));
                 }else{
-                    ArrayList linhaNova = retorno.get(resultado.getString("nomeRaca"));
+                    /*ArrayList linhaNova = retorno.get(resultado.getString("RACA"));
                     linhaNova.add(resultado.getString("RACA"));
-                    linhaNova.add(resultado.getInt("QUANTIDADE"));
+                    linhaNova.add(resultado.getInt("QUANTIDADE"));*/
                 }
             }
             return retorno;
         } catch (SQLException ex) {
+            System.out.println("Aqui");
             Logger.getLogger(PetDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
         return retorno;
-    }*/
+    }
 }
