@@ -19,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafxmvc.model.dao.PetDAO;
 import javafxmvc.model.database.Database;
@@ -173,7 +174,7 @@ public class FXMLCadastroController implements Initializable {
         // Criando um Estágio de Diálogo (Stage Dialog)
         Stage dialogStage = new Stage();
         //Especifica a modalidade para esta fase . Isso deve ser feito antes de fazer o estágio visível. A modalidade pode ser: Modality.NONE , Modality.WINDOW_MODAL , ou Modality.APPLICATION_MODAL 
-        //dialogStage.initModality(Modality.WINDOW_MODAL);//WINDOW_MODAL (possibilita minimizar)
+        dialogStage.initModality(Modality.WINDOW_MODAL);//WINDOW_MODAL (possibilita minimizar)
         
         //Especifica a janela do proprietário para esta página, ou null para um nível superior.
         //dialogStage.initOwner(null); //null deixa a Tela Principal livre para ser movida

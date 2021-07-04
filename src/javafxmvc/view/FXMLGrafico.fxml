@@ -14,7 +14,7 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <BarChart fx:id="barChart" layoutX="60.0" layoutY="78.0" prefHeight="487.0" prefWidth="826.0">
+      <BarChart fx:id="barChart" layoutX="60.0" layoutY="78.0" prefHeight="487.0" prefWidth="741.0">
         <xAxis>
           <CategoryAxis fx:id="categoryAxis" side="BOTTOM" />
         </xAxis>

@@ -12,32 +12,32 @@
    <left>
       <VBox prefHeight="400.0" prefWidth="126.0" style="-fx-background-color: #00afbb;" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onMouseClicked="#home" prefHeight="76.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: white;" text="HOME" textFill="WHITE">
+            <Button mnemonicParsing="false" onMouseClicked="#home" prefHeight="84.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: white;" text="HOME" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#page1" prefHeight="68.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: white;" text="CADASTRO" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#page1" prefHeight="84.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: white;" text="CADASTRO" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#page3" prefHeight="70.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="MATCHPET" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="106.0" mnemonicParsing="false" onMouseClicked="#page3" prefHeight="84.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="MATCHPET" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#page4" prefHeight="73.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="GRÁFICO" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="154.0" mnemonicParsing="false" onMouseClicked="#page4" prefHeight="84.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="GRÁFICO" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#page5" prefHeight="69.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="RELATÓRIO" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#page5" prefHeight="84.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="RELATÓRIO" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#page6" prefHeight="59.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="SOBRE" textFill="WHITE">
+            <Button layoutX="10.0" layoutY="250.0" mnemonicParsing="false" onMouseClicked="#page6" prefHeight="84.0" prefWidth="126.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="SOBRE" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
