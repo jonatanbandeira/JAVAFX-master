@@ -6,9 +6,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.event.ActionEvent;
+//import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+//import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 //import javafx.scene.control.Label;
@@ -29,32 +29,32 @@ public class FXMLMainController implements Initializable {
     }    
 
     @FXML
-    private void home(MouseEvent event) {
+    private void home(MouseEvent mouseEvent) {
         bp.setCenter(ap);
     }
 
     @FXML
-    private void page1(MouseEvent event) {
+    private void page1(MouseEvent mouseEvent) {
         loadPage("/javafxmvc/view/FXMLCadastro.fxml");
     }
 
     @FXML
-    private void page3(MouseEvent event) {
+    private void page3(MouseEvent mouseEvent) {
         loadPage("/javafxmvc/view/FXMLMatchPet.fxml");
     }
 
     @FXML
-    private void page4(MouseEvent event) {
+    private void page4(MouseEvent mouseEvent) {
         loadPage("/javafxmvc/view/FXMLGrafico.fxml");
     }
 
     @FXML
-    private void page5(MouseEvent event) {
+    private void page5(MouseEvent mouseEvent) {
         loadPage("/javafxmvc/view/FXMLRelatorio.fxml");
     }
 
     @FXML
-    private void page6(MouseEvent event) {
+    private void page6(MouseEvent mouseEvent) {
         loadPage("/javafxmvc/view/FXMLSobre.fxml");
     }
     

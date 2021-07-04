@@ -7,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLGraficoController">
+<AnchorPane id="AnchorPane" minHeight="600.0" minWidth="900.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLGraficoController">
    <children>
-      <Label layoutX="110.0" layoutY="23.0" prefHeight="26.0" prefWidth="385.0" text=" GRÁFICO DOS TIPOS DE RAÇAS CADASTRADAS" textAlignment="CENTER" textFill="#00afbb">
+      <Label layoutX="217.0" layoutY="37.0" prefHeight="26.0" prefWidth="385.0" text=" GRÁFICO DOS TIPOS DE RAÇAS CADASTRADAS" textAlignment="CENTER" textFill="#00afbb">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <BarChart fx:id="barChart" layoutX="60.0" layoutY="50.0" prefHeight="350.0" prefWidth="480.0">
+      <BarChart fx:id="barChart" layoutX="60.0" layoutY="78.0" prefHeight="487.0" prefWidth="826.0">
         <xAxis>
           <CategoryAxis fx:id="categoryAxis" side="BOTTOM" />
         </xAxis>
