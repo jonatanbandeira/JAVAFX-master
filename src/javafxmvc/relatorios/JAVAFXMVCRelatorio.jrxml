@@ -36,19 +36,15 @@ ORDER BY produtos.cdproduto]]>
 			<frame>
 				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" forecolor="#8C00FF" backcolor="#21C4C2" uuid="ebf53fe5-c085-4217-ab54-39a51be69e99"/>
 				<staticText>
-					<reportElement key="" x="130" y="13" width="455" height="67" forecolor="#0A0A0A" backcolor="#383131" uuid="6263f31f-9f59-4ed1-8d3f-51b6297b5617">
+					<reportElement key="" x="170" y="20" width="280" height="67" forecolor="#FFFFFF" backcolor="#383131" uuid="6263f31f-9f59-4ed1-8d3f-51b6297b5617">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement>
-						<font fontName="Californian FB" size="34" isBold="false" isItalic="false"/>
+						<font fontName="Californian FB" size="34" isBold="true" isItalic="false"/>
 					</textElement>
 					<text><![CDATA[Relátorio Tinpet]]></text>
 				</staticText>
-				<image>
-					<reportElement x="10" y="0" width="100" height="92" uuid="b3d5f869-d8a9-4872-a350-5a0179295afd"/>
-					<imageExpression><![CDATA["E:/Documentos (E)/GITHUB-Faculdade/JAVAFX/src/javafxmvc/imagens/tinpet.png"]]></imageExpression>
-				</image>
 			</frame>
 		</band>
 	</title>
@@ -56,7 +52,7 @@ ORDER BY produtos.cdproduto]]>
 		<band height="13"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="21">
+		<band height="22">
 			<line>
 				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="87f348e6-7ed0-40a2-a738-0f39bf9cd12a"/>
 			</line>
@@ -110,7 +106,7 @@ ORDER BY produtos.cdproduto]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="20">
+		<band height="22">
 			<line>
 				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="200c4ecf-8b45-4d77-a1ab-10dc85428f76"/>
 			</line>
@@ -165,7 +161,7 @@ ORDER BY produtos.cdproduto]]>
 		<band/>
 	</columnFooter>
 	<pageFooter>
-		<band height="17">
+		<band height="20">
 			<textField>
 				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="38225075-11cf-4425-a6db-7f063091fe49"/>
 				<textElement textAlignment="Right"/>
